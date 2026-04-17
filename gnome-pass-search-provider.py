@@ -159,7 +159,7 @@ class SearchPassService(dbus.service.Object):
 
         name = "".join(terms)
         password_list = []
-        for root, dirs, files in walk(self.password_store):
+        for root, dirs, files in walk(self.password_store, followlinks=True):
             dir_path = root[len(self.password_store) + 1 :]
 
             if dir_path.startswith("."):
