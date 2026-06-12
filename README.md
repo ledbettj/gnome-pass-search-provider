@@ -18,7 +18,13 @@ Supports:
 [![Packaging status](https://repology.org/badge/vertical-allrepos/gnome-pass-search-provider.svg)](https://repology.org/project/gnome-pass-search-provider/versions)
 
 ## Arch Linux
-Install `gnome-pass-search-provider-git` from the AUR.
+A `PKGBUILD` is included in this repository. Build and install it with:
+
+```
+makepkg -si
+```
+
+This pulls its dependencies (including `python-rapidfuzz`) from the official repositories, so no AUR packages are required.
 
 ## Debian, Ubuntu and derivatives
 If a package is available for your distribution version (see above for packaging status), just install `gnome-pass-search-provider` through APT:
@@ -40,7 +46,7 @@ dnf install gnome-pass-search-provider
 
 ## Manual
 
-Ensure that python>=3.7 as well as the dbus, gobject and thefuzz (formerly fuzzywuzzy, might still be packaged under that name in your distribution) Python modules are installed. They should all be packaged under python-name or python3-name depending on your distribution.
+Ensure that python>=3.7 as well as the dbus, gobject and rapidfuzz Python modules are installed. They should all be packaged under python-name or python3-name depending on your distribution (for example `python-rapidfuzz` on Arch, which is in the official repositories — no AUR package required).
 
 Clone this repository and run the installation script as root:
 ```
